@@ -25,4 +25,5 @@ class NginxXAccelRedirectServer(ServerBase):
         nginx_path = self.get_nginx_location(file.path)
         response['X-Accel-Redirect'] = nginx_path
         self.default_headers(request=request, response=response, file=file, **kwargs)
+        response['Content-Type'] = ''
         return response
